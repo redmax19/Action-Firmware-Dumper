@@ -126,7 +126,7 @@ jobs:
             fi
         done
         
-        git add .
+        git add -f .
         git commit -s -m "dump: import remaining dump for ${{ env.VENDOR_NAME }}
         Firmware: ${{ github.event.inputs.FIRMWARE_LINK }}"
         git push -u origin "$TARGET_BRANCH"
