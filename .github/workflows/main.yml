@@ -17,10 +17,7 @@ jobs:
       contents: write
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
-      
-    - name: Cleanup
-      uses: rokibhasansagar/slimhub_actions@main
+      uses: actions/checkout@v7
       
     - name: Set Swap Space
       uses: pierotofy/set-swap-space@master
@@ -82,7 +79,7 @@ jobs:
         git lfs install
         find . \( -name "*sensetime*" -o -name "*.lic" \) | cut -d'/' -f'2-' >| .gitignore
         git branch -M ${{ env.BRANCH }}
-        git config --global user.name "Alessandro Araújo"
+        git config --global user.name "alessandroaraujo5"
         git config --global user.email "alessandroaraujo0098@gmail.com"
         git remote add origin https://${{ secrets.GITLAB_TOKEN_NAME }}:${{ secrets.GITLAB_TOKEN }}@gitlab.com/${{ env.USERNAME }}/android_dump_${{ env.MANUFACTURER_NAME }}_${{ env.VENDOR_NAME }}.git
         find . -type f -size +100M -exec git lfs track {} \;
